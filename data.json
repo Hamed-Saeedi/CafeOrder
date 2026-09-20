@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Green tea",
+    "category": "Drink",
+    "price": 30,
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Coffee",
+    "category": "Drink",
+    "price": 80,
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "Sandwich",
+    "category": "Food",
+    "price": 120,
+    "available": true
+  },
+  {
+    "id": 4,
+    "name": "Cake slice",
+    "category": "Food",
+    "price": 90,
+    "available": false
+  },
+  {
+    "id": 5,
+    "name": "Water",
+    "category": "Drink",
+    "price": 20,
+    "available": true
+  }
+]

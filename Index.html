@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafe Order Builder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="app-header">
+      <div class="container">
+        <h1>Cafe Order Builder</h1>
+        <p>Build a takeaway order and check the total.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="workspace">
+        <!-- Menu Panel -->
+        <section class="main-panel panel" aria-labelledby="menu-heading">
+          <div class="panel-header">
+            <h2 id="menu-heading">Menu</h2>
+            <p>Choose available items to add to the order.</p>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="search-input">Search menu</label>
+              <input
+                type="search"
+                id="search-input"
+                placeholder="Search by name..."
+              />
+            </div>
+
+            <div class="field">
+              <label for="category-filter">Category</label>
+              <select id="category-filter">
+                <option value="">All categories</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="menu-status" class="status" role="status" aria-live="polite">
+            Loading menu...
+          </div>
+
+          <div id="menu-list" class="card-grid" aria-live="polite"></div>
+
+          <div id="menu-empty" class="empty-state" hidden>
+            No menu items match your search or filter.
+          </div>
+        </section>
+
+        <!-- Order Panel -->
+        <section class="side-panel panel" aria-labelledby="order-heading">
+          <div class="panel-header">
+            <h2 id="order-heading">Order</h2>
+            <p>Review the items in the current order.</p>
+          </div>
+
+          <div class="field">
+            <label for="customer-name">Customer name</label>
+            <input
+              type="text"
+              id="customer-name"
+              name="customer-name"
+              maxlength="60"
+              autocomplete="name"
+              placeholder="Enter customer name"
+            />
+            <p id="customer-name-error" class="error-message" role="alert"></p>
+          </div>
+
+          <div
+            id="order-status"
+            class="status"
+            role="status"
+            aria-live="polite"
+          >
+            Your order is empty.
+          </div>
+
+          <div id="order-list" class="order-list" aria-live="polite"></div>
+
+          <div id="order-empty" class="empty-state">
+            No items have been added to your order.
+          </div>
+
+          <div class="order-summary">
+            <div class="summary-row">
+              <span>Total</span>
+              <strong id="grand-total">0 AFN</strong>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="confirm-order" disabled>
+              Confirm Order
+            </button>
+
+            <button type="button" id="new-order" disabled>New Order</button>
+          </div>
+
+          <div
+            id="confirmation-summary"
+            class="confirmation-summary"
+            hidden
+            aria-live="polite"
+          ></div>
+        </section>
+      </div>
+
+      <p class="demo-notice">Demo: changes reset when this page reloads.</p>
+    </main>
+
+    <footer class="app-footer">
+      <div class="container">
+        <p>Cafe Order Builder — Classroom Demo</p>
+      </div>
+    </footer>
+
+    <script src="App.js"></script>
+  </body>
+</html>
